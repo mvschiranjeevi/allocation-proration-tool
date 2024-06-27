@@ -6,7 +6,7 @@ all: install-concurrently
 
 install-concurrently:
 	@if ! npm list -g concurrently > /dev/null 2>&1; then \
-		echo "Installing concurrently..."; \
+		echo "Installing concurrently"; \
 		npm install -g concurrently; \
 	else \
 		echo "Concurrently is already installed"; \
