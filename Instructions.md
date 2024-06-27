@@ -16,7 +16,7 @@
 4. npm i
 5. npm run dev
 
---> Frontend
+--> Backend
 
 1. cd website
 2. cd allocation-proration-tool
