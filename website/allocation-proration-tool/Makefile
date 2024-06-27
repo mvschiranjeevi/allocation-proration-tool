@@ -1,8 +1,16 @@
 FRONTEND_DIR=./frontend
 BACKEND_DIR=./backend
 
-all:
-	concurrently "make start-backend" "make start-frontend"
+all: install-concurrently
+	@concurrently "make start-backend" "make start-frontend"
+
+install-concurrently:
+	@if ! npm list -g concurrently > /dev/null 2>&1; then \
+		echo "Installing concurrently..."; \
+		npm install -g concurrently; \
+	else \
+		echo "Concurrently is already installed"; \
+	fi
 
 start-backend:
 	cd "${BACKEND_DIR}" && npm install && npm run dev
